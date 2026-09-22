@@ -1,6 +1,6 @@
 # Revision (Days 01–11)
 
-* My goal for 2026 is to become a DevOps Engineer, and I’m confidently progressing in the right direction. With consistent learning, hands-on practice, and a clear focus on mastering Linux, automation, and cloud technologies.
+* My goal for 2026 is to become a DevOps Engineer, and I’m confidently progressing in the right direction through consistent learning, hands-on practice, and a clear focus on mastering Linux, automation, and cloud technologies.
 
 ## Processes & services
 
@@ -8,15 +8,15 @@ When my system hangs or slows down, I use the following commands to troubleshoot
 
 `ps aux` → Lists all running processes on the system.
 
-`top`→ Display sorted information about processes.
+`top` → Displays live information about running processes.
 
 `systemctl status <service>` → Displays the status of a specific service (whether it’s active, failed, or inactive).
 
-`journalctl -u <service>`→ Displays logs for a specific service, useful for debugging issues.
+`journalctl -u <service>` → Displays logs for a specific service, which is useful for debugging issues.
 
 ## File skills
 
-I have practiced creating/modifying/permission of Linux file/folder.
+I have practiced creating, modifying, and managing permissions for Linux files and folders.
 Here is how to safely change ownership and permissions:
 
 - Check current ownership and permissions
@@ -29,18 +29,18 @@ Here is how to safely change ownership and permissions:
 
 - Change permissions (least privilege principle)
   
- `chmod 751 /path/to/file`
+`chmod 751 /path/to/file`
  
 
 ## Cheat sheet refresh
 
-Top commands I'd use in an incident :
+Top commands I’d use in an incident:
 
 - `ps aux` -  Lists all running processes with CPU/memory usage
 - `mpstat` - Monitors CPU utilization across cores, highlighting bottlenecks or unusual load.
-- `systemctl status service` - Verifies if a critical service is active, failed, or restarting.
-- `cat /var/log/nginx/error.log`- Reads raw logs for web server errors (replace with relevant service log path).
-- `journalctl -u service` - Retrieves detailed logs for a given service, useful for debugging failures.
+- `systemctl status <service>` - Verifies if a critical service is active, failed, or restarting.
+- `cat /var/log/nginx/error.log` - Reads raw logs for web server errors (replace with the relevant service log path).
+- `journalctl -u <service>` - Retrieves detailed logs for a given service, useful for debugging failures.
 - `free -m` - Displays memory usage in MB to check for exhaustion or leaks.
 
 ## What will I focus on improving in the next 3 days?
