@@ -1,0 +1,45 @@
+
+name: wordpress-compose
+services:
+  db:
+    container_name: wordpress_db
+    environment:
+      MYSQL_DATABASE: wordpress_db
+      MYSQL_PASSWORD: db_pass
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: wp_user
+    image: mysql:8.0
+    networks:
+      default: null
+    restart: always
+    volumes:
+      - type: volume
+        source: mysql_data
+        target: /var/lib/mysql
+        volume: {}
+  wordpress:
+    container_name: wordpress_app
+    depends_on:
+      db:
+        condition: service_started
+        required: true
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress_db
+      WORDPRESS_DB_PASSWORD: db_pass
+      WORDPRESS_DB_USER: wp_user
+    image: wordpress:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8000"
+        protocol: tcp
+    restart: always
+networks:
+  default:
+    name: wordpress-compose_default
+volumes:
+  mysql_data:
+    name: wordpress-compose_mysql_data
